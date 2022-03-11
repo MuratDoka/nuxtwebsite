@@ -1,22 +1,57 @@
 <template>
-<div class="container">
-  <button type="button" class="btn btn-primary">Click Me</button>
+<div>  
+  <Slider />
 
-  <div class="dropdown mt-5">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
+  <AboutUs />
+
+  <OurServices />
+
+<!-- Contact Start -->
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-8">
+        <h1 class="main-heading">If you have any questions?</h1>
+        <h4>Please reach out us at contact"example.com</h4>
+      </div>
+
+      <div class="col-md-4 text-center my-auto">
+        <NuxtLink to="/contact" class="px-5 py-2 btn btn-primary">Contact Us</NuxtLink>
+      </div>
+
+    </div>
+  </div>
 </div>
+<!-- Contact End -->
 </div>
 </template>
 
 <script>
+import Slider from '~/components/Slider.vue';
+import AboutUs from '~/components/AboutUs.vue';
+import OurServices from '~/components/OurServices.vue';
+
+
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  components: { Slider, AboutUs, OurServices}, 
+  head() {
+    return {
+      title: 'Home Page',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'NUXTJS Website'
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'Vue, nuxt, JavaScript'
+        }
+      ]
+    }
+  }
 }
 </script>
